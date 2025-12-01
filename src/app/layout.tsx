@@ -7,7 +7,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import theme from '../theme';
 import NavBar from "@/components/navigation/NavBar";
 import Footer from "@/components/footer";
-import { Toolbar } from "@mui/material";
+import { Box, Toolbar } from "@mui/material";
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
@@ -33,15 +33,15 @@ export default function RootLayout({
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <NavBar />
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-              }}
+
+            <Box
+              component="main"
+              sx={{ p: 3 }}
             >
+              {" "}
               {children}
-              <Footer />
-            </div>
+            </Box>
+            <Footer />
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

@@ -1,7 +1,10 @@
-import { Typography } from "@mui/material";
+import { Container, Typography } from "@mui/material";
+import { BookingForm } from "@/components/bookingForm";
 
 export default function BookAClass () {
  return (
-    <Typography variant="h1" component={"h1"}>Book a class ya filthy animal</Typography>
+   <Container> <BookingForm/></Container>
+   
+
  )
 }

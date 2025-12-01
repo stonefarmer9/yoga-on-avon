@@ -31,8 +31,7 @@ function NavBar() {
   };
 
   return (
-    <AppBar>
-      <Container maxWidth="xl">
+    <AppBar position="sticky">
         <Toolbar>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -93,7 +92,6 @@ function NavBar() {
             ))}
           </Box>
         </Toolbar>
-      </Container>
     </AppBar>
  
   );
