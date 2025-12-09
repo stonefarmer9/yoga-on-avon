@@ -3,7 +3,6 @@ import React from "react";
 import { useFormControls } from "@/utils/contactFormControl";
 import { Button, TextField } from "@mui/material";
 
-console.log("useFormControls:", useFormControls);
 const inputFieldValues = [
   {
     name: "fullName",
@@ -28,8 +27,6 @@ export const BookingForm = () => {
   const { handleInputValue, handleFormSubmit, formIsValid, errors } =
     useFormControls();
 
-console.log("useFormControls:", useFormControls);
-
   return (
     <form
       autoComplete="off"
@@ -38,6 +35,7 @@ console.log("useFormControls:", useFormControls);
       {inputFieldValues.map((inputFieldValue, index) => {
         return (
           <TextField
+            style={{marginBottom: "5%"}}
             key={index}
             onChange={handleInputValue}
             onBlur={handleInputValue}
