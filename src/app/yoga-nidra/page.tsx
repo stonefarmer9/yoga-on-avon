@@ -13,7 +13,10 @@ export default function Home() {
       <Grid
         container
         spacing={3}
-      >
+      > 
+      <Grid size={4}>
+          <Typography variant="body1">{strings.Introduction}</Typography>
+        </Grid>
         <Grid size={8}>
           <Image
             src={YogiClass}
@@ -24,13 +27,7 @@ export default function Home() {
             placeholder="blur"
           />
         </Grid>
-        <Grid size={4}>
-          <Typography variant="body1">{strings.Introduction}</Typography>
-        </Grid>
-        <Grid size={8}>
-          <Typography variant="body1">{strings.YogaInformation}</Typography>
-        </Grid>
-        <Grid size={4}>
+           <Grid size={4}>
           <Image
             src={BigSmile}
             alt="The teacher"
@@ -40,6 +37,10 @@ export default function Home() {
             placeholder="blur"
           />
         </Grid>
+        <Grid size={8}>
+          <Typography variant="body1">{strings.YogaInformation}</Typography>
+        </Grid>
+    
       </Grid>
     </Container>
   );
