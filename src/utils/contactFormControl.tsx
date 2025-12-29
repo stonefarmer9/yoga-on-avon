@@ -1,5 +1,6 @@
 "use client";
 
+import { SelectChangeEvent } from "@mui/material";
 import axios from "axios";
 import { use, useState } from "react";
 
@@ -7,6 +8,7 @@ type contactValues = {
   fullName: string;
   email: string;
   message: string;
+  header: string;
 };
 
 type errors = {
@@ -18,12 +20,14 @@ const PostContactForm = async (
   successCallback: () => void,
   errorCallback: () => void
 ): Promise<void> => {
-  const { fullName, email, message } = values;
+  const { fullName, email, message, header } = values;
   axios.defaults.headers.post["Content-Type"] = "application/json";
   axios
     .post("https://formsubmit.co/ajax/4be8820f1cc70012aeb9bde5c611356f", {
-      name: "FormSubmit",
-      message: "I'm from Devro LABS",
+      name: fullName,
+      message: message,
+      email: email,
+      header,
     })
     .then((response) => console.log(response))
     .catch((error) => console.log(error));
@@ -33,6 +37,7 @@ const initialFormValues = {
   fullName: "",
   email: "",
   message: "",
+  header: ""
 };
 
 export const useFormControls = () => {
@@ -63,8 +68,9 @@ export const useFormControls = () => {
   };
 
   const handleInputValue = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | SelectChangeEvent<any> 
   ) => {
+    
     const { name, value } = e.target;
     setValues({
       ...values,
