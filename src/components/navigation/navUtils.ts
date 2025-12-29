@@ -4,7 +4,7 @@ export type navConfig = {
 };
 export const pages: navConfig[] = [
   { path: "/", name: "Home" },
-  { path: "/book-a-class", name: "Book a class" },
+  { path: "/book-a-class/yogaNidra", name: "Book a class" },
   { path: "/yoga-nidra", name: "Yoga Nidra" },
   { path: "/private-classes", name: "Private Classes"}
 ];
