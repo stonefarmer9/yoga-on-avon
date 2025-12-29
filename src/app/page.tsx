@@ -14,33 +14,23 @@ import Spa from '@mui/icons-material/Spa'
 import  CurrencyPound from '@mui/icons-material/CurrencyPound';
 import Send from '@mui/icons-material/Send'
 import Link from "next/link";
+import { Info } from '@mui/icons-material';
 
 export default function Home() {
 
   return (
     <Container maxWidth={"lg"}>
+      <Typography variant="body1" style={{marginTop: "5%", textAlign: "center"}}>{strings.Introduction}</Typography>
+
       <Grid
         container
         spacing={3}
+        style={{ marginTop: "5%" }}
       >
-        <Grid
-          size={12}
-          style={{
-            marginBottom: "10%",
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <Typography variant="subtitle1">Current classes</Typography>
-        </Grid>
-      
         <>
           {lessons.map((lesson) => {
             return (
-              <Grid
-                container
-                spacing={2}
-              >
+              <>
                 <Grid size={3}>
                   <Stack spacing={2}>
                     <Box sx={{ position: "relative", display: "inline-block" }}>
@@ -103,11 +93,19 @@ export default function Home() {
                       alignItems="center"
                     >
                       <CurrencyPound style={{ marginRight: "1.5%" }} />
-                      {`£${lesson.price} per person`}
+                      {lesson.price}
                     </Typography>
                     <Button
                       component={Link}
-                      href={`/book-a-class/yogaNidra`}
+                      href={`${lesson.infoLink}`}
+                      variant="outlined"
+                      startIcon={<Info />}
+                    >
+                      More info
+                    </Button>
+                    <Button
+                      component={Link}
+                      href={`/book-a-class${lesson.bookingLink}`}
                       variant="outlined"
                       endIcon={<Send />}
                     >
@@ -115,7 +113,7 @@ export default function Home() {
                     </Button>
                   </Stack>
                 </Grid>
-              </Grid>
+              </>
             );
           })}
         </>
@@ -126,10 +124,10 @@ export default function Home() {
         style={{ marginTop: "15%" }}
       >
         <Grid size={4}>
-          <Typography variant="body1">{strings.Introduction}</Typography>
+          <Typography variant="body1">{strings.Information}</Typography>
         </Grid>
         <Grid size={4}>
-          <Typography variant="body1">{strings.YogaInformation}</Typography>
+          <Typography variant="body1">{strings.InformationTwo}</Typography>
         </Grid>
         <Grid size={4}>
           <Image

@@ -3,8 +3,9 @@ export interface lesson {
     location: string,
     dateTime: number | string,
     info: string,
-    link: string   
-    price: number 
+    infoLink: string,
+    bookingLink: string,   
+    price: string
 }
 
 const weeklyYogaNidra: lesson = {
@@ -12,8 +13,19 @@ const weeklyYogaNidra: lesson = {
     location: "Bradford on avon youth and community centre",
     dateTime: "Every sunday 5pm",
     info: "10-15 minutes of gentle movement followed by 30-45 minute meditative yoga nap",
-    link: "/yoga-nidra",
-    price: 10,
+    infoLink: "/yoga-nidra",
+    bookingLink: "/yogaNidra",
+    price: "£10 per person",
 }
 
-export default [weeklyYogaNidra] 
+const privateClass: lesson = {
+  name: "Private classes",
+  location: "Your home or private space",
+  dateTime: "Custom",
+  info: "private yoga nidra or vinyasa flow lessons",
+  infoLink: "/private-classes",
+  bookingLink: "/privateClass",
+  price: "Dependent on needs starting from £35 per hour",
+};
+
+export default [weeklyYogaNidra, privateClass]; 

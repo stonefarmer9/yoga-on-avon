@@ -4,43 +4,49 @@ import Grid from "@mui/material/Grid2";
 import YogiClass from "@/Assests/yogi-class.jpg";
 import BigSmile from "@/Assests/big-smile-sm.jpg";
 import Image from "next/image";
-import { Container } from "@mui/material";
+import { Button, Container
+ } from "@mui/material";
 import { strings } from "@/utils";
+import { Send } from "@mui/icons-material";
+import Link from "next/link";
+
 
 export default function Home() {
   return (
     <Container maxWidth={"lg"}>
       <Grid
         container
-        spacing={3}
-      > 
-      <Grid size={4}>
-          <Typography variant="body1">{strings.Introduction}</Typography>
+        spacing={4}
+      >
+        <Grid size={6}>
+          <Typography variant="body1">
+            {strings.YogaNidraIntroduction}
+          </Typography>
         </Grid>
-        <Grid size={8}>
+        <Grid size={6}>
+          <Typography variant="body1">
+            {strings.YogaNidraClassOutline}
+          </Typography>
+        </Grid>
+        <Grid size={12}>
           <Image
             src={YogiClass}
             alt="Yoga class"
-            width={700}
-            height={500}
-            blurDataURL="data:..."
-            placeholder="blur"
+            width={1200}
+            height={800}
           />
         </Grid>
-           <Grid size={4}>
-          <Image
-            src={BigSmile}
-            alt="The teacher"
-            width={400}
-            height={500}
-            blurDataURL="data:..."
-            placeholder="blur"
-          />
+        <Grid size={4}>
+          <Button
+          component={Link}
+          href={`/book-a-class/yogaNidra`}
+          variant="outlined"
+          endIcon={<Send />}
+        >
+          Book now
+        </Button> 
         </Grid>
-        <Grid size={8}>
-          <Typography variant="body1">{strings.YogaInformation}</Typography>
-        </Grid>
-    
+       
       </Grid>
     </Container>
   );
