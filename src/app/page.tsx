@@ -107,7 +107,7 @@ export default function Home() {
                     </Typography>
                     <Button
                       component={Link}
-                      href="/book-a-class"
+                      href={`/book-a-class/yogaNidra`}
                       variant="outlined"
                       endIcon={<Send />}
                     >

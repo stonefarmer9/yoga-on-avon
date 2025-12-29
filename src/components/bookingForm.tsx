@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useFormControls } from "@/utils/contactFormControl";
 import { Button, FormControl, InputLabel, MenuItem, Select, Stack, TextField } from "@mui/material";
+import { useParams } from "next/navigation";
 
 interface classBookingObject {
   name: string,
@@ -47,11 +48,24 @@ const inputFieldValues = [
   },
 ];
 
+
+
 export const BookingForm = () => {
+
+  const { classType } = useParams();
+
+  type classTypeMap = { [key: string]: classBookingObject };
+
+  const classTypeMap: classTypeMap = {
+    yogaNidra: yogaNidra,
+    privateClass: privateClass,
+  };
+
   const { handleInputValue, handleFormSubmit, formIsValid, errors, values } =
     useFormControls();
 
-    const [selectedClass, setSelectedClass] = useState<classBookingObject>(yogaNidra)
+    const [selectedClass, setSelectedClass] =
+      useState<classBookingObject>(classTypeMap[classType as keyof classTypeMap]);
 
     const [message, setMessage] = useState<string>(yogaNidra.emailTemplate)
 
@@ -63,6 +77,8 @@ export const BookingForm = () => {
       }
       handleInputValue(e);
     };
+
+    
 
     useEffect(()=> {
      setMessage(selectedClass.emailTemplate)
