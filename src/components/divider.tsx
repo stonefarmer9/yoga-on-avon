@@ -39,7 +39,7 @@ const Divider = (props: DividerProps) => {
       },
       sx
     );
-  }, [orientation]);
+  }, [orientation, sx]);
 
   return (
     <MuiDivider

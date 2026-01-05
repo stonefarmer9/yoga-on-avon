@@ -61,7 +61,7 @@ export const BookingForm = () => {
     privateClass: privateClass,
   };
 
-  const { handleInputValue, handleFormSubmit, formIsValid, errors, values } =
+  const { handleInputValue, handleFormSubmit, formIsValid, errors } =
     useFormControls();
 
     const [selectedClass, setSelectedClass] =
@@ -106,7 +106,7 @@ export const BookingForm = () => {
             }}
           >{classes.map(yogaClass => {
             return (
-              <MenuItem value={yogaClass.name}>
+              <MenuItem value={yogaClass.name} key={yogaClass.name}>
                 {yogaClass.name}
               </MenuItem>
             );

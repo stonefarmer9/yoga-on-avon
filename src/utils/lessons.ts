@@ -28,4 +28,6 @@ const privateClass: lesson = {
   price: "Dependent on needs starting from £35 per hour",
 };
 
-export default [weeklyYogaNidra, privateClass]; 
+const lessons = [weeklyYogaNidra, privateClass];
+
+export default lessons; 

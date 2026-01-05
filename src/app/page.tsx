@@ -3,7 +3,7 @@ import * as React from 'react';
 import Grid from '@mui/material/Grid2';
 import BigSmile from "@/Assests/big-smile-sm.jpg"
 import Image from "next/image";
-import { Box, Button, Container, IconButton, Stack } from '@mui/material';
+import { Box, Button, Container, Stack } from '@mui/material';
 import { Divider } from '@/components'
 import { strings } from '@/utils';
 import lessons  from "@/utils/lessons"

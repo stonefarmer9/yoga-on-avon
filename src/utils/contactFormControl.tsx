@@ -2,7 +2,7 @@
 
 import { SelectChangeEvent } from "@mui/material";
 import axios from "axios";
-import { use, useState } from "react";
+import { useState } from "react";
 
 type contactValues = {
   fullName: string;
@@ -29,8 +29,13 @@ const PostContactForm = async (
       email: email,
       header,
     })
-    .then((response) => console.log(response))
-    .catch((error) => console.log(error));
+    .then((response) => {
+      console.log(response)
+      successCallback()
+    })
+    .catch((error) => {console.log(error)
+      errorCallback();
+    });
 };
 
 const initialFormValues = {
@@ -45,7 +50,7 @@ export const useFormControls = () => {
   const [errors, setErrors] = useState<errors>({});
 
   const validate = (fieldValues = values) => {
-    let temp: errors = { ...errors };
+    const temp: errors = { ...errors };
 
     if ("fullName" in fieldValues)
       temp.fullName = fieldValues.fullName ? "" : "This field is required.";
@@ -68,9 +73,9 @@ export const useFormControls = () => {
   };
 
   const handleInputValue = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | SelectChangeEvent<any> 
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | SelectChangeEvent<string> 
   ) => {
-    
+
     const { name, value } = e.target;
     setValues({
       ...values,
