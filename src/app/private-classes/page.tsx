@@ -16,30 +16,46 @@ export default function Home() {
         container
         spacing={2}
       >
-          <Grid size={6}>
-    <Image
+        <Grid
+          size={{ md: 6, xs: 12 }}
+          sx={{ display: { xs: "none" } }}
+        >
+          <Image
             src={PrayingMan}
             width={500}
-            height={800} alt={""}    />
-          </Grid>
-          <Grid size={6}>
-            <Stack spacing={5}>
+            height={800}
+            alt={""}
+          />
+        </Grid>
+        <Grid size={{ md: 6, xs: 12 }}>
+          <Stack spacing={5}>
             <Typography variant="body1">
               {strings.PrivateClassIntroduction}
             </Typography>
-        
             <Typography variant="body1">
               {strings.PrivateClassOutline}
-            </Typography> <Button
-            component={Link}
-            href={`/book-a-class/privateClass`}
-            variant="outlined"
-            endIcon={<Send />}
-          >
-            Book now
-          </Button>
-            </Stack>
-          </Grid>
+            </Typography>{" "}
+            <Button
+              component={Link}
+              href={`/book-a-class/privateClass`}
+              variant="outlined"
+              endIcon={<Send />}
+            >
+              Book now
+            </Button>
+            <Grid
+              size={{ md: 6, xs: 12 }}
+              sx={{ display: { md: "none" } }}
+            >
+              <Image
+                src={PrayingMan}
+                width={500}
+                height={800}
+                alt={""}
+              />
+            </Grid>
+          </Stack>
+        </Grid>
       </Grid>
     </Container>
   );

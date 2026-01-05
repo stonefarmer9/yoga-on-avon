@@ -1,13 +1,12 @@
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 import Grid from '@mui/material/Grid2';
-import YogiClass from "@/Assests/yogi-class.jpg"
 import BigSmile from "@/Assests/big-smile-sm.jpg"
 import Image from "next/image";
-import { Box, Button, Container, Divider, IconButton, Stack } from '@mui/material';
+import { Box, Button, Container, IconButton, Stack } from '@mui/material';
+import { Divider } from '@/components'
 import { strings } from '@/utils';
 import lessons  from "@/utils/lessons"
-import { lesson } from '@/utils/lessons'
 import LocationOn from "@mui/icons-material/LocationOn";
 import AccessTime from '@mui/icons-material/AccessTime'
 import Spa from '@mui/icons-material/Spa'
@@ -21,6 +20,7 @@ export default function Home() {
   return (
     <Container maxWidth={"lg"}>
       <Typography variant="body1" style={{marginTop: "5%", textAlign: "center"}}>{strings.Introduction}</Typography>
+      <Divider flexItem orientation={'horizontal'}/>
 
       <Grid
         container
@@ -31,7 +31,7 @@ export default function Home() {
           {lessons.map((lesson) => {
             return (
               <>
-                <Grid size={3}>
+                <Grid size={{ md: 3, xs: 12 }}>
                   <Stack spacing={2}>
                     <Box sx={{ position: "relative", display: "inline-block" }}>
                       <Spa
@@ -61,10 +61,13 @@ export default function Home() {
                   </Stack>
                 </Grid>
                 <Divider
-                  orientation="vertical"
                   flexItem
+                  orientation={{
+                    xs: "horizontal",
+                    md: "vertical",
+                  }}
                 />
-                <Grid size={8}>
+                <Grid size={{md:8, xs: 12}}>
                   <Stack
                     spacing={6}
                     padding={"5% 5% 5% 0"}
@@ -95,14 +98,7 @@ export default function Home() {
                       <CurrencyPound style={{ marginRight: "1.5%" }} />
                       {lesson.price}
                     </Typography>
-                    <Button
-                      component={Link}
-                      href={`${lesson.infoLink}`}
-                      variant="outlined"
-                      startIcon={<Info />}
-                    >
-                      More info
-                    </Button>
+               
                     <Button
                       component={Link}
                       href={`/book-a-class${lesson.bookingLink}`}
@@ -110,6 +106,14 @@ export default function Home() {
                       endIcon={<Send />}
                     >
                       Book now
+                    </Button>  
+                    <Button
+                      component={Link}
+                      href={`${lesson.infoLink}`}
+                      variant="outlined"
+                      startIcon={<Info />}
+                    >
+                      More info
                     </Button>
                   </Stack>
                 </Grid>
@@ -123,13 +127,13 @@ export default function Home() {
         spacing={3}
         style={{ marginTop: "15%" }}
       >
-        <Grid size={4}>
+        <Grid size={{md:4, xs: 12}}>
           <Typography variant="body1">{strings.Information}</Typography>
         </Grid>
-        <Grid size={4}>
+        <Grid size={{md:4, xs: 12}}>
           <Typography variant="body1">{strings.InformationTwo}</Typography>
         </Grid>
-        <Grid size={4}>
+        <Grid size={{md:4, xs: 12}}>
           <Image
             src={BigSmile}
             alt="The teacher"

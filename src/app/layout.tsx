@@ -6,7 +6,6 @@ import { Roboto } from 'next/font/google';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '../theme';
 import NavBar from "@/components/navigation/NavBar";
-import Footer from "@/components/footer";
 import { Box, Toolbar } from "@mui/material";
 
 const roboto = Roboto({
@@ -38,10 +37,11 @@ export default function RootLayout({
               component="main"
               sx={{ p: 3 }}
             >
-              {" "}
+       
               {children}
             </Box>
-            <Footer />
+ 
+ 
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

@@ -18,17 +18,24 @@ export default function Home() {
         container
         spacing={4}
       >
-        <Grid size={6}>
-          <Typography variant="body1">
+        <Grid size={{ md: 6, xs: 12 }}>
+          <Typography
+            variant="body1"
+            sx={{ fontStyle: "italic" }}
+          >
             {strings.YogaNidraIntroduction}
           </Typography>
+          <Typography variant="body1">{strings.YogaNidraAuthor}</Typography>
         </Grid>
-        <Grid size={6}>
+        <Grid size={{ md: 6, xs: 12 }}>
           <Typography variant="body1">
             {strings.YogaNidraClassOutline}
           </Typography>
         </Grid>
-        <Grid size={12}>
+        <Grid
+          size={12}
+          sx={{ display: { xs: "none" } }}
+        >
           <Image
             src={YogiClass}
             alt="Yoga class"
@@ -36,17 +43,16 @@ export default function Home() {
             height={800}
           />
         </Grid>
-        <Grid size={4}>
+        <Grid size={{md:4}}>
           <Button
-          component={Link}
-          href={`/book-a-class/yogaNidra`}
-          variant="outlined"
-          endIcon={<Send />}
-        >
-          Book now
-        </Button> 
+            component={Link}
+            href={`/book-a-class/yogaNidra`}
+            variant="outlined"
+            endIcon={<Send />}
+          >
+            Book now
+          </Button>
         </Grid>
-       
       </Grid>
     </Container>
   );
