@@ -31,18 +31,7 @@ export default function Home() {
           <Typography variant="body1">
             {strings.YogaNidraClassOutline}
           </Typography>
-        </Grid>
-        <Grid
-          size={12}
-          sx={{ display: { xs: "none" } }}
-        >
-          <Image
-            src={YogiClass}
-            alt="Yoga class"
-            width={1200}
-            height={800}
-          />
-        </Grid>
+        </Grid> 
         <Grid size={{md:4}}>
           <Button
             component={Link}
@@ -53,6 +42,18 @@ export default function Home() {
             Book now
           </Button>
         </Grid>
+        <Grid
+          size={12}
+          sx={{ display: { xs: "none", md: "block" } }}
+        >
+          <Image
+            src={YogiClass}
+            alt="Yoga class"
+            width={1200}
+            height={800}
+          />
+        </Grid>
+       
       </Grid>
     </Container>
   );

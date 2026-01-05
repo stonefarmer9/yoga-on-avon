@@ -18,7 +18,7 @@ export default function Home() {
       >
         <Grid
           size={{ md: 6, xs: 12 }}
-          sx={{ display: { xs: "none" } }}
+          sx={{ display: { xs: "none", md: "block" } }}
         >
           <Image
             src={PrayingMan}
