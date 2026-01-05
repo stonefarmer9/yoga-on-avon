@@ -3,6 +3,7 @@ import {
     navConfig,
     pages} from "./navigation"
 
-export { NavBar, pages };
+import {Divider} from "./divider"
+export { NavBar, pages, Divider };
 
 export type { navConfig };
