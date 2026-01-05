@@ -35,7 +35,7 @@ export default function RootLayout({
 
             <Box
               component="main"
-              sx={{ p: 3 }}
+              sx={{ p: 3, mt: {xs:"20%", md: "5%"}}}
             >
        
               {children}
