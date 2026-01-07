@@ -54,14 +54,15 @@ export default function Home() {
                     <Typography variant="subtitle1">{lesson.info}</Typography>
                   </Stack>
                 </Grid>
-                <Divider
-                  flexItem
-                  orientation={{
-                    xs: "horizontal",
-                    md: "vertical",
-                  }}
-                />
+
                 <Grid size={{ md: 8, xs: 12 }}>
+                  <Divider
+                    flexItem
+                    orientation={{
+                      xs: "horizontal",
+                      md: "vertical",
+                    }}
+                  />
                   <Stack
                     spacing={6}
                     padding={"5% 5% 5% 0"}
