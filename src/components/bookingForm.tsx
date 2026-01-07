@@ -132,7 +132,7 @@ export const BookingForm = () => {
                 error: true,
                 helperText: errors[inputFieldValue.name],
               })}
-              value={inputFieldValue.id === "my-message" ? message : null}
+              value={inputFieldValue.id === "my-message" ? message : ""}
             />
           );
         })}

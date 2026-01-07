@@ -1,7 +1,7 @@
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import Grid from "@mui/material/Grid2";
-import YogiClass from "@/Assests/yogi-class.jpg";
+import YogiClass from "@/Assets/yogi-class.jpg";
 import Image from "next/image";
 import { Button, Container
  } from "@mui/material";

@@ -11,10 +11,14 @@ const theme = createTheme({
     secondary: {
       main: "#f8f8f8",
     },
+ 
   },
 
   typography: {
     fontFamily: "var(--font-roboto)",
+    allVariants : {
+      color: "#4f575c"
+    }
   },
 });
 
