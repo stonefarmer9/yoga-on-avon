@@ -30,12 +30,28 @@ export default function Home() {
           </Grid>
         </Grid>
 
-        <Grid size={{ md: 5, xs: 12 }}>
+        <Grid
+          size={{ md: 5, xs: 12 }}
+          sx={{ display: { xs: "none", md: "block" } }}
+        >
           <Image
             src={BigSmile}
             alt="Georges Le Vaillant teaching yoga nidra"
             width={400}
             height={500}
+            blurDataURL="data:..."
+            placeholder="blur"
+          />
+        </Grid>
+        <Grid
+          size={{ md: 5, xs: 12 }}
+          sx={{ display: { xs: "block", md: "none" } }}
+        >
+          <Image
+            src={BigSmile}
+            alt="Georges Le Vaillant teaching yoga nidra"
+            width={300}
+            height={400}
             blurDataURL="data:..."
             placeholder="blur"
           />
@@ -69,7 +85,10 @@ export default function Home() {
             {strings.InformationThree}
           </Typography>
         </Grid>
-        <Grid size={8}>
+        <Grid
+          size={8}
+          sx={{ display: { xs: "none", md: "block" } }}
+        >
           <Image
             src={WarriorPose}
             alt="Georges Le Vaillant teaching yoga nidra"

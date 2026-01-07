@@ -49,8 +49,8 @@ export default function Home() {
             >
               <Image
                 src={PrayingMan}
-                width={500}
-                height={800}
+                width={300}
+                height={600}
                 alt={""}
               />
             </Grid>
