@@ -1,7 +1,7 @@
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import Grid from "@mui/material/Grid2";
-import PrayingMan from "@/Assests/prayingman.jpg";
+import PrayingMan from "@/Assets/prayingman.jpg";
 
 import Image from "next/image";
 import { Button, Container, Stack } from "@mui/material";

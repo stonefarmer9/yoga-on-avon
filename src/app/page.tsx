@@ -1,143 +1,78 @@
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 import Grid from '@mui/material/Grid2';
-import BigSmile from "@/Assests/big-smile-sm.jpg"
+import BigSmile from "@/Assets/big-smile-sm.jpg"
+import WarriorPose from "@/Assets/warrior-pose.jpg";
 import Image from "next/image";
-import { Box, Button, Container, Stack } from '@mui/material';
-import { Divider } from '@/components'
+import { Container, Divider } from '@mui/material';
 import { strings } from '@/utils';
-import lessons  from "@/utils/lessons"
-import LocationOn from "@mui/icons-material/LocationOn";
-import AccessTime from '@mui/icons-material/AccessTime'
-import Spa from '@mui/icons-material/Spa'
-import  CurrencyPound from '@mui/icons-material/CurrencyPound';
-import Send from '@mui/icons-material/Send'
-import Link from "next/link";
-import { Info } from '@mui/icons-material';
+
 
 export default function Home() {
 
   return (
     <Container maxWidth={"lg"}>
-      <Typography variant="body1" style={{marginTop: "5%", textAlign: "center"}}>{strings.Introduction}</Typography>
-      <Divider flexItem orientation={'horizontal'}/>
+      <Grid
+        container
+        columnSpacing={4}
+        rowSpacing={12}
+      >
+        <Grid size={12}>
+          <Typography
+            variant="body1"
+            sx={{ fontSize: "2.25rem", fontWeight: "300" }}
+            textAlign={"center"}
+          >
+            {strings.Welcome}
+          </Typography>
+          <Grid size={12}>
+            <Divider orientation="horizontal" />
+          </Grid>
+        </Grid>
 
-      <Grid
-        container
-        spacing={3}
-        style={{ marginTop: "5%" }}
-      >
-        <>
-          {lessons.map((lesson) => {
-            return (
-              <>
-                <Grid size={{ md: 3, xs: 12 }}>
-                  <Stack spacing={2}>
-                    <Box sx={{ position: "relative", display: "inline-block" }}>
-                      <Spa
-                        sx={{
-                          position: "absolute",
-                          fontSize: "16rem",
-                          color: "grey.300",
-                          opacity: 0.3,
-                          top: "50%",
-                          left: "50%",
-                          transform: "translate(-50%, -50%)",
-                          zIndex: 0,
-                        }}
-                      />
-                      <Typography
-                        variant="h2"
-                        sx={{
-                          position: "relative",
-                          zIndex: 1,
-                          padding: 2,
-                        }}
-                      >
-                        {lesson.name}
-                      </Typography>
-                    </Box>
-                    <Typography variant="subtitle1">{lesson.info}</Typography>
-                  </Stack>
-                </Grid>
-                <Divider
-                  flexItem
-                  orientation={{
-                    xs: "horizontal",
-                    md: "vertical",
-                  }}
-                />
-                <Grid size={{md:8, xs: 12}}>
-                  <Stack
-                    spacing={6}
-                    padding={"5% 5% 5% 0"}
-                  >
-                    <Stack spacing={2}>
-                      <Typography
-                        variant="h5"
-                        display="flex"
-                        alignItems="center"
-                      >
-                        <AccessTime style={{ marginRight: "1.5%" }} />
-                        {lesson.dateTime}
-                      </Typography>
-                      <Typography
-                        variant="h5"
-                        display="flex"
-                        alignItems="center"
-                      >
-                        <LocationOn style={{ marginRight: "1.5%" }} />
-                        {lesson.location}
-                      </Typography>
-                    </Stack>
-                    <Typography
-                      variant="h6"
-                      display="flex"
-                      alignItems="center"
-                    >
-                      <CurrencyPound style={{ marginRight: "1.5%" }} />
-                      {lesson.price}
-                    </Typography>
-               
-                    <Button
-                      component={Link}
-                      href={`/book-a-class${lesson.bookingLink}`}
-                      variant="outlined"
-                      endIcon={<Send />}
-                    >
-                      Book now
-                    </Button>  
-                    <Button
-                      component={Link}
-                      href={`${lesson.infoLink}`}
-                      variant="outlined"
-                      startIcon={<Info />}
-                    >
-                      More info
-                    </Button>
-                  </Stack>
-                </Grid>
-              </>
-            );
-          })}
-        </>
-      </Grid>
-      <Grid
-        container
-        spacing={3}
-        style={{ marginTop: "15%" }}
-      >
-        <Grid size={{md:4, xs: 12}}>
-          <Typography variant="body1">{strings.Information}</Typography>
-        </Grid>
-        <Grid size={{md:4, xs: 12}}>
-          <Typography variant="body1">{strings.InformationTwo}</Typography>
-        </Grid>
-        <Grid size={{md:4, xs: 12}}>
+        <Grid size={{ md: 5, xs: 12 }}>
           <Image
             src={BigSmile}
-            alt="The teacher"
+            alt="Georges Le Vaillant teaching yoga nidra"
             width={400}
+            height={500}
+            blurDataURL="data:..."
+            placeholder="blur"
+          />
+        </Grid>
+
+        <Grid size={{ md: 4, xs: 12 }}>
+          <Typography
+            variant="body1"
+            style={{ marginBottom: "2.5%" }}
+          >
+            {strings.Introduction}
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{ textIndent: "2em" }}
+          >
+            {strings.Information}
+          </Typography>
+        </Grid>
+        <Grid size={{ md: 4, xs: 12 }}>
+          <Typography
+            variant="body1"
+            sx={{ textIndent: "2em", marginBottom: "2.5%" }}
+          >
+            {strings.InformationTwo}
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{ textIndent: "2em" }}
+          >
+            {strings.InformationThree}
+          </Typography>
+        </Grid>
+        <Grid size={8}>
+          <Image
+            src={WarriorPose}
+            alt="Georges Le Vaillant teaching yoga nidra"
             height={500}
             blurDataURL="data:..."
             placeholder="blur"
