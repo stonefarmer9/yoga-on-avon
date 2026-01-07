@@ -8,6 +8,7 @@ import { Button, Container
 import { strings } from "@/utils";
 import { Send } from "@mui/icons-material";
 import Link from "next/link";
+import { Divider } from "@/components";
 
 
 export default function Home() {
@@ -17,21 +18,35 @@ export default function Home() {
         container
         spacing={4}
       >
-        <Grid size={{ md: 6, xs: 12 }}>
+        <Grid size={12}>
           <Typography
             variant="body1"
             sx={{ fontStyle: "italic" }}
           >
             {strings.YogaNidraIntroduction}
           </Typography>
-          <Typography variant="body1">{strings.YogaNidraAuthor}</Typography>
+          <Typography variant="body1" textAlign="right" sx={{mt: "0.75%"}}>{strings.YogaNidraAuthor}</Typography>
+        </Grid>
+        <Grid size={{ md: 6, xs: 12 }}>
+          <Typography variant="body1">
+            {strings.YogaNidraDescription}
+          </Typography>
         </Grid>
         <Grid size={{ md: 6, xs: 12 }}>
           <Typography variant="body1">
             {strings.YogaNidraClassOutline}
           </Typography>
-        </Grid> 
-        <Grid size={{md:4}}>
+        </Grid>
+        <Grid size={12}><Divider orientation="horizontal"/></Grid>
+        <Grid size={12}>
+          <Typography variant="h5">Important Information</Typography>
+        </Grid>
+        <Grid size={12}>
+          <Typography variant="body1" textAlign={'center'} sx={{pl: "15%", pr: "15%", fontWeight: "bold"}}>
+            {strings.YogaNidraClassLogistics}
+          </Typography>
+        </Grid>
+        <Grid offset={"auto"}>
           <Button
             component={Link}
             href={`/book-a-class/yogaNidra`}
@@ -52,7 +67,6 @@ export default function Home() {
             height={800}
           />
         </Grid>
-       
       </Grid>
     </Container>
   );
