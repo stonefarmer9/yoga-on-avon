@@ -57,10 +57,10 @@ export default function Home() {
           />
         </Grid>
 
-        <Grid size={{ md: 4, xs: 12 }}>
+        <Grid size={{ md: 7, xs: 12 }}>
           <Typography
             variant="body1"
-            style={{ marginBottom: "2.5%" }}
+            sx={{mb: "2.5%", mt: {md: "10%"}}}
           >
             {strings.Introduction}
           </Typography>
