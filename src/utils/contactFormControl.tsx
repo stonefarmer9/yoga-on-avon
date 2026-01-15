@@ -23,17 +23,18 @@ const PostContactForm = async (
   const { fullName, email, message, header } = values;
   axios.defaults.headers.post["Content-Type"] = "application/json";
   axios
-    .post("https://formsubmit.co/ajax/4be8820f1cc70012aeb9bde5c611356f", {
+    .post(`https://formsubmit.co/ajax/${process.env.NEXT_PUBLIC_EMAIL_ALIAS}`, {
       name: fullName,
       message: message,
       email: email,
       header,
     })
     .then((response) => {
-      console.log(response)
-      successCallback()
+      console.log(response);
+      successCallback();
     })
-    .catch((error) => {console.log(error)
+    .catch((error) => {
+      console.log(error);
       errorCallback();
     });
 };
