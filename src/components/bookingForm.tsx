@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from "react";
 import { useFormControls } from "@/utils/contactFormControl";
 import { Button, FormControl, InputLabel, MenuItem, Select, Stack, TextField } from "@mui/material";
-import { useParams } from "next/navigation";
-
+import { useParams, useRouter } from "next/navigation";
+import {EmailContact} from "./emailContact";
 interface classBookingObject {
   name: string,
   emailHeader: string,
@@ -53,7 +53,7 @@ const inputFieldValues = [
 export const BookingForm = () => {
 
   const { classType } = useParams();
-
+const router = useRouter()
   type classTypeMap = { [key: string]: classBookingObject };
 
   const classTypeMap: classTypeMap = {
@@ -78,6 +78,20 @@ export const BookingForm = () => {
       handleInputValue(e);
     };
 
+    const onSuccess =()=> {
+      if(errorState) {
+        setErrorState(false)
+      }
+      router.push('/thanks')
+
+    }
+
+const [errorState, setErrorState] = useState<boolean>(false)
+
+    const onError = () => {
+      setErrorState(true)
+    }
+
     
 
     useEffect(()=> {
@@ -88,7 +102,7 @@ export const BookingForm = () => {
   return (
     <form
       autoComplete="off"
-      onSubmit={handleFormSubmit}
+      onSubmit={(e) => handleFormSubmit(e, onSuccess, onError)}
     >
       <Stack spacing={4}>
         <FormControl>
@@ -101,18 +115,22 @@ export const BookingForm = () => {
             name={"header"}
             onChange={(e) => {
               handleInputValue(e);
-              const newSelection = classes.find(yogaClass => yogaClass.name === e.target.value)
+              const newSelection = classes.find(
+                (yogaClass) => yogaClass.name === e.target.value
+              );
               setSelectedClass(newSelection!);
             }}
-          >{classes.map(yogaClass => {
-            return (
-              <MenuItem value={yogaClass.name} key={yogaClass.name}>
-                {yogaClass.name}
-              </MenuItem>
-            );
-          })}
-            
-         
+          >
+            {classes.map((yogaClass) => {
+              return (
+                <MenuItem
+                  value={yogaClass.name}
+                  key={yogaClass.name}
+                >
+                  {yogaClass.name}
+                </MenuItem>
+              );
+            })}
           </Select>
         </FormControl>
         {inputFieldValues.map((inputFieldValue, index) => {
@@ -144,6 +162,7 @@ export const BookingForm = () => {
         >
           Send Message
         </Button>
+        <EmailContact />
       </Stack>
     </form>
   );

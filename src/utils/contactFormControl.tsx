@@ -85,16 +85,18 @@ export const useFormControls = () => {
     validate({ ...values, [name]: value });
   };
 
-  const handleSuccess = () => {
+  const handleSuccess = (componentCallback: ()=> void) => {
     setValues({
       ...initialFormValues,
     });
+    componentCallback()
   };
 
-  const handleError = () => {
+  const handleError = (componentCallback: () => void) => {
     setValues({
       ...initialFormValues,
     });
+    componentCallback();
   };
 
   const formIsValid = (fieldValues = values) => {
@@ -107,7 +109,7 @@ export const useFormControls = () => {
     return isValid;
   };
 
-  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>, successCallback: ()=> void, errorCallback: ()=> void) => {
     e.preventDefault();
 
     validate();
@@ -116,7 +118,7 @@ export const useFormControls = () => {
       Object.values(errors).every((x) => x === "") && formIsValid();
 
     if (isValid) {
-      await PostContactForm(values, handleSuccess, handleError);
+      await PostContactForm(values, ()=> handleSuccess(successCallback), ()=> handleError(errorCallback));
     }
   };
 
