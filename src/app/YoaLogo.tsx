@@ -3,7 +3,7 @@ import SvgIcon from "@mui/material/SvgIcon";
 
 export default function YoaLogo() {
   return (
-    <SvgIcon style={{ fontSize: "5em"}}>
+    <SvgIcon style={{ fontSize: "5em" }}>
       <svg
         width="42"
         height="22"

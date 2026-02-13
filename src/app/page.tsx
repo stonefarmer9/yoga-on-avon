@@ -1,15 +1,13 @@
-import Typography from '@mui/material/Typography';
-import * as React from 'react';
-import Grid from '@mui/material/Grid2';
-import BigSmile from "@/Assets/big-smile-sm.jpg"
+import Typography from "@mui/material/Typography";
+import * as React from "react";
+import Grid from "@mui/material/Grid2";
+import BigSmile from "@/Assets/big-smile-sm.jpg";
 import WarriorPose from "@/Assets/warrior-pose.jpg";
 import Image from "next/image";
-import { Container, Divider } from '@mui/material';
-import { strings } from '@/utils';
-
+import { Container, Divider } from "@mui/material";
+import { strings } from "@/utils";
 
 export default function Home() {
-
   return (
     <Container maxWidth={"lg"}>
       <Grid
@@ -60,7 +58,7 @@ export default function Home() {
         <Grid size={{ md: 7, xs: 12 }}>
           <Typography
             variant="body1"
-            sx={{mb: "2.5%", mt: {md: "10%"}}}
+            sx={{ mb: "2.5%", mt: { md: "10%" } }}
           >
             {strings.Introduction}
           </Typography>
@@ -101,4 +99,3 @@ export default function Home() {
     </Container>
   );
 }
-

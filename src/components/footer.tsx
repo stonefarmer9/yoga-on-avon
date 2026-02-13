@@ -6,7 +6,6 @@ import { Container, Typography, Button, Link } from "@mui/material";
 
 const Footer = () => {
   return (
-    
     <Container
       maxWidth={false}
       disableGutters
@@ -14,7 +13,6 @@ const Footer = () => {
         backgroundColor: theme.palette.primary.main,
         padding: theme.spacing(3, 2),
         marginTop: "auto",
- 
       }}
     >
       <MainLogo />
@@ -41,6 +39,6 @@ const Footer = () => {
       </Button>
     </Container>
   );
-}
+};
 
 export default Footer;

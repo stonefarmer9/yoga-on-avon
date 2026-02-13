@@ -1,4 +1,3 @@
-import { strings } from './strings'
+import { strings } from "./strings";
 
-
-export { strings }
+export { strings };
