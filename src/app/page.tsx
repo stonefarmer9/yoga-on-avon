@@ -19,7 +19,7 @@ export default function Home() {
       >
         <Grid size={12}>
           <Typography
-            variant="body1"
+            variant="h1"
             sx={{ fontSize: "2.25rem", fontWeight: "300" }}
             textAlign={"center"}
           >

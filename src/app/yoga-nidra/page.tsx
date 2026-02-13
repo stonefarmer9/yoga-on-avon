@@ -14,6 +14,19 @@ import { Divider } from "@/components";
 export default function Home() {
   return (
     <Container maxWidth={"lg"}>
+        <Grid size={12} sx={{mb: "2%"}}>
+          <Typography
+            variant="h1"
+            sx={{ fontSize: "2.25rem", fontWeight: "300" }}
+            textAlign={"center"}
+          >
+            {strings.YogaNidraPageTitle}
+          </Typography>
+          <Grid size={12}>
+            <Divider orientation="horizontal" />
+          </Grid>
+        </Grid>
+
       <Grid
         container
         spacing={4}

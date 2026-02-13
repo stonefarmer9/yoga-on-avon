@@ -8,13 +8,28 @@ import { Button, Container, Stack } from "@mui/material";
 import { strings } from "@/utils";
 import { Send } from "@mui/icons-material";
 import Link from "next/link";
+import { Divider } from "@/components";
 
 export default function Home() {
   return (
     <Container maxWidth={"lg"}>
+        <Grid size={12} sx={{mb: "2%"}}>
+          <Typography
+            variant="h1"
+            sx={{ fontSize: "2.25rem", fontWeight: "300" }}
+            textAlign={"center"}
+          >
+            {strings.PrivateClassesTitle}
+          </Typography>
+          <Grid size={12}>
+            <Divider orientation="horizontal" />
+          </Grid>
+        </Grid>
+
       <Grid
         container
         spacing={2}
+        
       >
         <Grid
           size={{ md: 6, xs: 12 }}
