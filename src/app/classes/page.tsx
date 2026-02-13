@@ -11,21 +11,35 @@ import CurrencyPound from "@mui/icons-material/CurrencyPound";
 import Send from "@mui/icons-material/Send";
 import Link from "next/link";
 import { Info } from "@mui/icons-material";
+import { strings } from "@/utils";
 
 export default function Home() {
   return (
     <Container maxWidth={"lg"}>
+   
 
       <Grid
         container
         spacing={3}
-        style={{ marginTop: "5%" }}
+
       >
+         <Grid size={12}>
+          <Typography
+            variant="h1"
+            sx={{ fontSize: "2.25rem", fontWeight: "300" }}
+            textAlign={"center"}
+          >
+            {strings.ClassesPageTitle}
+          </Typography>
+          <Grid size={12}>
+            <Divider orientation="horizontal" />
+          </Grid>
+        </Grid>
         <>
           {lessons.map((lesson) => {
             return (
               <>
-                <Grid size={{ md: 3, xs: 12 }}>
+                <Grid size={{ md: 3, xs: 12 }} key={lesson.name}>
                   <Stack spacing={2}>
                     <Box sx={{ position: "relative", display: "inline-block" }}>
                       <Spa

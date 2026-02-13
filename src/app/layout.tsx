@@ -18,8 +18,8 @@ const roboto = Roboto({
 
 
 export const metadata: Metadata = {
-  title: "Yoga on Avon",
-  description: "Your holistic yoga experience",
+  title: "Yoga on Avon | Vinyasa Flow Classes in Bradford on Avon | Yoga Nidra & Home Classes",
+  description: "Your holistic yoga experience in Bradford on Avon, offering private and public classes to rest and relax, book now for a new connection to your wellness",
 };
 
 export default function RootLayout({
