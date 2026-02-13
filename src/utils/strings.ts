@@ -1,4 +1,3 @@
-
 export const strings = {
   AlternativeContactMethod: `If you prefer you may contact me directly on`,
   BookAClassTitle: `Book a class with me`,
@@ -17,7 +16,7 @@ While I currently offer a small selection of classes as YOA grows I will be offe
   YogaNidraDescription: `Yoga Nidra, often called "yogic sleep," is a powerful guided meditation technique that induces deep relaxation while maintaining conscious awareness. Practiced lying down in a comfortable position, it systematically guides practitioners through body scanning, breath awareness, and visualization exercises. Unlike traditional sleep, you remain in a state between waking and sleeping, accessing the subconscious mind while the body enters profound rest. This ancient practice activates the parasympathetic nervous system, reducing stress, anxiety, and tension. Regular practice can improve sleep quality, enhance creativity, process emotions, and promote healing. A typical session lasts 20-45 minutes, with practitioners often reporting that one hour of Yoga Nidra equals four hours of conventional sleep in terms of rest and rejuvenation benefits.`,
 
   YogaNidraClassOutline: ` I find  minor movement before meditation really enhances the connection we make with our body. Therefore in my classes we move the body, gently connecting with all our joints, softly working our limbs and nourishing our spirits with our breath. Before we settle down and find comfort as I guide you through the nidra itself. The class will usually involve about 10-15 minutes of gentle movement that anyone can do, and if it is too much for you I simply invite you to do what you can and simply connect with our incredible bodies. We will then settle down for the Nidra, which will take around 30 minutes, leaving you with 10-15 minutes to re-awaken and take some quiet moments before returning to the real world.`,
-   
+
   YogaNidraClassLogistics: `For this class please bring blankets or jumpers as you may find yourselves getting cold as you leave your body. Further I can provide only a handful of mats which will be available first come first served, so if you have your own mat I advise bringing it along. (Hopefully this will change as time goes on).
 `,
   YogaNidraPageTitle: `Yoga Nidra - a short description`,

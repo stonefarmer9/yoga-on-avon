@@ -16,14 +16,11 @@ import { strings } from "@/utils";
 export default function Home() {
   return (
     <Container maxWidth={"lg"}>
-   
-
       <Grid
         container
         spacing={3}
-
       >
-         <Grid size={12}>
+        <Grid size={12}>
           <Typography
             variant="h1"
             sx={{ fontSize: "2.25rem", fontWeight: "300" }}
@@ -39,7 +36,10 @@ export default function Home() {
           {lessons.map((lesson) => {
             return (
               <>
-                <Grid size={{ md: 3, xs: 12 }} key={lesson.name}>
+                <Grid
+                  size={{ md: 3, xs: 12 }}
+                  key={lesson.name}
+                >
                   <Stack spacing={2}>
                     <Box sx={{ position: "relative", display: "inline-block" }}>
                       <Spa
@@ -131,7 +131,6 @@ export default function Home() {
           })}
         </>
       </Grid>
-     
     </Container>
   );
 }
