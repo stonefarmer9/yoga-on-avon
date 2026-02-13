@@ -43,7 +43,7 @@ const initialFormValues = {
   fullName: "",
   email: "",
   message: "",
-  header: ""
+  header: "",
 };
 
 export const useFormControls = () => {
@@ -74,9 +74,10 @@ export const useFormControls = () => {
   };
 
   const handleInputValue = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | SelectChangeEvent<string> 
+    e:
+      | React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+      | SelectChangeEvent<string>
   ) => {
-
     const { name, value } = e.target;
     setValues({
       ...values,
@@ -85,11 +86,11 @@ export const useFormControls = () => {
     validate({ ...values, [name]: value });
   };
 
-  const handleSuccess = (componentCallback: ()=> void) => {
+  const handleSuccess = (componentCallback: () => void) => {
     setValues({
       ...initialFormValues,
     });
-    componentCallback()
+    componentCallback();
   };
 
   const handleError = (componentCallback: () => void) => {
@@ -109,7 +110,11 @@ export const useFormControls = () => {
     return isValid;
   };
 
-  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>, successCallback: ()=> void, errorCallback: ()=> void) => {
+  const handleFormSubmit = async (
+    e: React.FormEvent<HTMLFormElement>,
+    successCallback: () => void,
+    errorCallback: () => void
+  ) => {
     e.preventDefault();
 
     validate();
@@ -118,7 +123,11 @@ export const useFormControls = () => {
       Object.values(errors).every((x) => x === "") && formIsValid();
 
     if (isValid) {
-      await PostContactForm(values, ()=> handleSuccess(successCallback), ()=> handleError(errorCallback));
+      await PostContactForm(
+        values,
+        () => handleSuccess(successCallback),
+        () => handleError(errorCallback)
+      );
     }
   };
 

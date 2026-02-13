@@ -1,32 +1,40 @@
-'use client'
+"use client";
 import React, { useEffect, useState } from "react";
 import { useFormControls } from "@/utils/contactFormControl";
-import { Button, FormControl, InputLabel, MenuItem, Select, Stack, TextField } from "@mui/material";
+import {
+  Button,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  Stack,
+  TextField,
+} from "@mui/material";
 import { useParams, useRouter } from "next/navigation";
-import {EmailContact} from "./emailContact";
+import { EmailContact } from "./emailContact";
 interface classBookingObject {
-  name: string,
-  emailHeader: string,
-  selectValue: string,
-  emailTemplate: string,
+  name: string;
+  emailHeader: string;
+  selectValue: string;
+  emailTemplate: string;
 }
 
 const yogaNidra: classBookingObject = {
   name: "Yoga Nidra class",
   emailHeader: "Yoga Nidra class booking inquiry",
   selectValue: "Nidra",
-  emailTemplate: " Hi, I would like to join you for yoga nidra on [DATE]."
-}
+  emailTemplate: " Hi, I would like to join you for yoga nidra on [DATE].",
+};
 
 const privateClass: classBookingObject = {
   name: "Private class",
   emailHeader: "Private class inquiry",
   selectValue: "Private",
-  emailTemplate: "Hi, I would like to book you for a private yoga class. on [DATE] at [TIME]. I consider myself an [BEINNGER, MODERATE, EXPERIENCED, HIGHLY EXPERIENCED] practitioner. I would like to [Please provide a brief description of what you would like to achieve from our sessions."
-}
+  emailTemplate:
+    "Hi, I would like to book you for a private yoga class. on [DATE] at [TIME]. I consider myself an [BEINNGER, MODERATE, EXPERIENCED, HIGHLY EXPERIENCED] practitioner. I would like to [Please provide a brief description of what you would like to achieve from our sessions.",
+};
 
-const classes: classBookingObject[] = [yogaNidra, privateClass]
-
+const classes: classBookingObject[] = [yogaNidra, privateClass];
 
 const inputFieldValues = [
   {
@@ -48,12 +56,9 @@ const inputFieldValues = [
   },
 ];
 
-
-
 export const BookingForm = () => {
-
   const { classType } = useParams();
-const router = useRouter()
+  const router = useRouter();
   type classTypeMap = { [key: string]: classBookingObject };
 
   const classTypeMap: classTypeMap = {
@@ -64,40 +69,37 @@ const router = useRouter()
   const { handleInputValue, handleFormSubmit, formIsValid, errors } =
     useFormControls();
 
-    const [selectedClass, setSelectedClass] =
-      useState<classBookingObject>(classTypeMap[classType as keyof classTypeMap]);
+  const [selectedClass, setSelectedClass] = useState<classBookingObject>(
+    classTypeMap[classType as keyof classTypeMap]
+  );
 
-    const [message, setMessage] = useState<string>(yogaNidra.emailTemplate)
+  const [message, setMessage] = useState<string>(yogaNidra.emailTemplate);
 
-    const onTextChange = (
-      e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-    ) => {
-      if(e.target.name === "message") {
-          setMessage(e.target.value); 
-      }
-      handleInputValue(e);
-    };
-
-    const onSuccess =()=> {
-      if(errorState) {
-        setErrorState(false)
-      }
-      router.push('/thanks')
-
+  const onTextChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    if (e.target.name === "message") {
+      setMessage(e.target.value);
     }
+    handleInputValue(e);
+  };
 
-const [errorState, setErrorState] = useState<boolean>(false)
-
-    const onError = () => {
-      setErrorState(true)
+  const onSuccess = () => {
+    if (errorState) {
+      setErrorState(false);
     }
+    router.push("/thanks");
+  };
 
-    
+  const [errorState, setErrorState] = useState<boolean>(false);
 
-    useEffect(()=> {
-     setMessage(selectedClass.emailTemplate)
-    }, [selectedClass])
+  const onError = () => {
+    setErrorState(true);
+  };
 
+  useEffect(() => {
+    setMessage(selectedClass.emailTemplate);
+  }, [selectedClass]);
 
   return (
     <form

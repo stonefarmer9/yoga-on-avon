@@ -1,30 +1,38 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 
-import { Roboto } from 'next/font/google';
-import { ThemeProvider } from '@mui/material/styles';
-import theme from '../theme';
+import { Roboto } from "next/font/google";
+import { ThemeProvider } from "@mui/material/styles";
+import theme from "../theme";
 import NavBar from "@/components/navigation/NavBar";
 import { Box } from "@mui/material";
 
 const roboto = Roboto({
-  weight: ['300', '400', '500', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-roboto',
-
+  weight: ["300", "400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-roboto",
 });
 
-
 export const metadata: Metadata = {
-  title: "Yoga on Avon | Vinyasa Flow Classes in Bradford on Avon | Yoga Nidra & Home Classes",
-  description: "Your holistic yoga experience in Bradford on Avon, offering private and public classes to rest and relax, book now for a new connection to your wellness",
-  keywords: ['yoga', 'vinyasa flow', 'bradford on avon', 'yoga nidra', 'home classes', 'private yoga classes', 'beginer friendly']
+  title:
+    "Yoga on Avon | Vinyasa Flow Classes in Bradford on Avon | Yoga Nidra & Home Classes",
+  description:
+    "Your holistic yoga experience in Bradford on Avon, offering private and public classes to rest and relax, book now for a new connection to your wellness",
+  keywords: [
+    "yoga",
+    "vinyasa flow",
+    "bradford on avon",
+    "yoga nidra",
+    "home classes",
+    "private yoga classes",
+    "beginer friendly",
+  ],
 };
 
 export default function RootLayout({
-  children, 
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
@@ -37,13 +45,10 @@ export default function RootLayout({
 
             <Box
               component="main"
-              sx={{ p: 3, mt: {xs:"20%", md: "5%"}}}
+              sx={{ p: 3, mt: { xs: "20%", md: "5%" } }}
             >
-       
               {children}
             </Box>
- 
- 
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
