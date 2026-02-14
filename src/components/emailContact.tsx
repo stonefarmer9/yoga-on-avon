@@ -1,10 +1,16 @@
-'use client';
+"use client";
 import Grid from "@mui/material/Grid2";
 
-import { Button, ButtonGroup, Typography, Tooltip, Snackbar } from '@mui/material';
-import { ContentCopy, Email } from '@mui/icons-material';
-import { useState } from 'react';
-import { strings } from '@/utils';
+import {
+  Button,
+  ButtonGroup,
+  Typography,
+  Tooltip,
+  Snackbar,
+} from "@mui/material";
+import { ContentCopy, Email } from "@mui/icons-material";
+import { useState } from "react";
+import { strings } from "@/utils";
 
 export const EmailContact = () => {
   const [open, setOpen] = useState(false);
@@ -27,8 +33,7 @@ export const EmailContact = () => {
             variant="body2"
             color="text.primary"
           >
-           
-           {strings.AlternativeContactMethod}
+            {strings.AlternativeContactMethod}
           </Typography>
         </Grid>
         <Grid size={{ xs: 12, sm: 9 }}>
