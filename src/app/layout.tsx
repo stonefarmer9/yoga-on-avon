@@ -29,6 +29,11 @@ export const metadata: Metadata = {
     "private yoga classes",
     "beginer friendly",
   ],
+  verification: {
+    other: {
+      "google-site-verification": "llg2hd2usiJfAbDvGJsC_srsohBkvFE6cmBYl8GZphY",
+    },
+  },
 };
 
 export default function RootLayout({
