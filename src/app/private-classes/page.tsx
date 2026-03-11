@@ -60,7 +60,7 @@ export default function Home() {
               variant="outlined"
               endIcon={<Send />}
             >
-              Book now
+              Lets flow
             </Button>
 
             <Typography variant="h5">
@@ -75,7 +75,7 @@ export default function Home() {
               variant="outlined"
               endIcon={<Send />}
             >
-              Book now
+              Relax and restore
             </Button>
             <Typography variant="h5">
               {strings.BeginnersClassHeading}
@@ -90,7 +90,7 @@ export default function Home() {
               variant="outlined"
               endIcon={<Send />}
             >
-              Book now
+              Flow like a pro
             </Button>
             <Grid
               size={{ md: 6, xs: 12 }}
