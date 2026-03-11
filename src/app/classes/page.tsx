@@ -35,11 +35,8 @@ export default function Home() {
         <>
           {lessons.map((lesson) => {
             return (
-              <>
-                <Grid
-                  size={{ md: 3, xs: 12 }}
-                  key={lesson.name}
-                >
+              <React.Fragment key={lesson.name}>
+                <Grid size={{ md: 3, xs: 12 }}>
                   <Stack spacing={2}>
                     <Box sx={{ position: "relative", display: "inline-block" }}>
                       <Spa
@@ -126,7 +123,7 @@ export default function Home() {
                     </Button>
                   </Stack>
                 </Grid>
-              </>
+              </React.Fragment>
             );
           })}
         </>
