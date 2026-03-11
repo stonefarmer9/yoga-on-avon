@@ -11,7 +11,7 @@ import CurrencyPound from "@mui/icons-material/CurrencyPound";
 import Send from "@mui/icons-material/Send";
 import Link from "next/link";
 import { Info } from "@mui/icons-material";
-import { strings } from "@/utils";
+import { strings, buttonStrings } from "@/utils";
 
 export default function Home() {
   return (
@@ -111,7 +111,7 @@ export default function Home() {
                       variant="outlined"
                       endIcon={<Send />}
                     >
-                      Book now
+                      {buttonStrings.BookNow}
                     </Button>
                     <Button
                       component={Link}
@@ -119,7 +119,7 @@ export default function Home() {
                       variant="outlined"
                       startIcon={<Info />}
                     >
-                      More info
+                      {buttonStrings.MoreInformation}
                     </Button>
                   </Stack>
                 </Grid>

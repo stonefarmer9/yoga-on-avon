@@ -5,7 +5,7 @@ import PrayingMan from "@/Assets/prayingman.jpg";
 
 import Image from "next/image";
 import { Button, Container, Stack } from "@mui/material";
-import { strings } from "@/utils";
+import { strings, buttonStrings } from "@/utils";
 import { Send } from "@mui/icons-material";
 import Link from "next/link";
 import { Divider } from "@/components";
@@ -60,7 +60,7 @@ export default function Home() {
               variant="outlined"
               endIcon={<Send />}
             >
-              Lets flow
+              {buttonStrings.BookPrivateClass}
             </Button>
 
             <Typography variant="h5">
@@ -75,7 +75,7 @@ export default function Home() {
               variant="outlined"
               endIcon={<Send />}
             >
-              Relax and restore
+              {buttonStrings.BookMeditation}
             </Button>
             <Typography variant="h5">
               {strings.BeginnersClassHeading}
@@ -90,7 +90,7 @@ export default function Home() {
               variant="outlined"
               endIcon={<Send />}
             >
-              Flow like a pro
+              {buttonStrings.BookBeginnersBundle}
             </Button>
             <Grid
               size={{ md: 6, xs: 12 }}

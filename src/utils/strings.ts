@@ -37,3 +37,11 @@ While I currently offer a small selection of classes as YOA grows I will be offe
   ReturnHome: `Return home`,
   EmailTooltip: `Email copied to clipboard`,
 };
+
+export const buttonStrings = {
+  BookNow: `Book Now`,
+  BookPrivateClass: `Lets flow`,
+  BookMeditation: `Relax and restore`,
+  BookBeginnersBundle: `Flow like a pro`,
+  MoreInformation: `More Info`,
+};
