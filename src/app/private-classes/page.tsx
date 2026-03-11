@@ -5,7 +5,7 @@ import PrayingMan from "@/Assets/prayingman.jpg";
 
 import Image from "next/image";
 import { Button, Container, Stack } from "@mui/material";
-import { strings } from "@/utils";
+import { strings, buttonStrings } from "@/utils";
 import { Send } from "@mui/icons-material";
 import Link from "next/link";
 import { Divider } from "@/components";
@@ -46,19 +46,51 @@ export default function Home() {
         </Grid>
         <Grid size={{ md: 6, xs: 12 }}>
           <Stack spacing={5}>
+            <Typography variant="h5">{strings.PrivateClassHeading}</Typography>
+
             <Typography variant="body1">
               {strings.PrivateClassIntroduction}
             </Typography>
             <Typography variant="body1">
               {strings.PrivateClassOutline}
-            </Typography>{" "}
+            </Typography>
             <Button
               component={Link}
               href={`/book-a-class/privateClass`}
               variant="outlined"
               endIcon={<Send />}
             >
-              Book now
+              {buttonStrings.BookPrivateClass}
+            </Button>
+
+            <Typography variant="h5">
+              {strings.PrivateOnlineMeditationHeading}
+            </Typography>
+            <Typography variant="body1">
+              {strings.PrivateOnlineMeditation}
+            </Typography>
+            <Button
+              component={Link}
+              href={`/book-a-class/onlineMeditation`}
+              variant="outlined"
+              endIcon={<Send />}
+            >
+              {buttonStrings.BookMeditation}
+            </Button>
+            <Typography variant="h5">
+              {strings.BeginnersClassHeading}
+            </Typography>
+
+            <Typography variant="body1">
+              {strings.BeginnersClassInfo}
+            </Typography>
+            <Button
+              component={Link}
+              href={`/book-a-class/beginnersBundle`}
+              variant="outlined"
+              endIcon={<Send />}
+            >
+              {buttonStrings.BookBeginnersBundle}
             </Button>
             <Grid
               size={{ md: 6, xs: 12 }}

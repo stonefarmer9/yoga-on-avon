@@ -45,7 +45,7 @@ const beginnersBundle: lesson = {
   info: "A bundle of 5 classes to get you practicing yoga and the confidence to flow like a pro",
   infoLink: "/private-classes",
   bookingLink: "/beginnersBundle",
-  price: "£50",
+  price: "£75",
 };
 
 const lessons = [
