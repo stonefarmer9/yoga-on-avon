@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import { useParams, useRouter } from "next/navigation";
 import { EmailContact } from "./emailContact";
+import { buttonStrings, inputLabels } from "@/utils";
 interface classBookingObject {
   name: string;
   emailHeader: string;
@@ -39,7 +40,7 @@ const beginnersBundle: classBookingObject = {
   emailHeader: "Beginners bundle inquiry",
   selectValue: "Beginners",
   emailTemplate:
-    "HI, I would like to book the beginners bundle to start on [DATE].",
+    "Hi, I would like to book the beginners bundle to start on [DATE].",
 };
 
 const onlineMeditation: classBookingObject = {
@@ -131,7 +132,9 @@ export const BookingForm = () => {
     >
       <Stack spacing={4}>
         <FormControl>
-          <InputLabel id="demo-simple-select-label">Class Type</InputLabel>
+          <InputLabel id="demo-simple-select-label">
+            {inputLabels.classType}
+          </InputLabel>
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
@@ -185,7 +188,7 @@ export const BookingForm = () => {
           color="secondary"
           disabled={!formIsValid()}
         >
-          Send Message
+          {buttonStrings.SendMessage}
         </Button>
         <EmailContact />
       </Stack>

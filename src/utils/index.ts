@@ -1,3 +1,3 @@
-import { strings, buttonStrings } from "./strings";
+import { strings, buttonStrings, inputLabels } from "./strings";
 
-export { strings, buttonStrings };
+export { strings, buttonStrings, inputLabels };

@@ -44,4 +44,9 @@ export const buttonStrings = {
   BookMeditation: `Relax and restore`,
   BookBeginnersBundle: `Flow like a pro`,
   MoreInformation: `More Info`,
+  SendMessage: `Send Message`,
+};
+
+export const inputLabels = {
+  classType: `Class Type`,
 };
