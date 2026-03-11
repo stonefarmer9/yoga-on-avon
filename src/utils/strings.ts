@@ -1,6 +1,8 @@
 export const strings = {
   AlternativeContactMethod: `If you prefer you may contact me directly on`,
   BookAClassTitle: `Book a class with me`,
+  BeginnersClassHeading: `Beginners class bundle`,
+  BeginnersClassInfo: `A series of 5 classes priced at £15 each (£75 total). These are booked as a block and we will arrange the sessions as you need, usually once a week but can be when you need. The aim of these is to introduce you to yoga, its practices, philosophy and physicality. We will learn how to move, how to breath, how to meditate and in later classes bring them together and give you the confidence to join public classes, practice solo and generally getting you to flow like a pro`,
   ClassesPageTitle: `Classes available in Bradford on Avon`,
   Introduction: `My name is Georges, I teach yoga offering both vinyasa flow classes and yoga nidra classes. I believe yoga is a restorative balm for the soul, it gives us the needed connection to our bodies and allows us to find the space to exist with ourselves. I teach so that I can share these with you and hopefully help you in some small way. 
 `,
@@ -20,10 +22,13 @@ While I currently offer a small selection of classes as YOA grows I will be offe
   YogaNidraClassLogistics: `For this class please bring blankets or jumpers as you may find yourselves getting cold as you leave your body. Further I can provide only a handful of mats which will be available first come first served, so if you have your own mat I advise bringing it along. (Hopefully this will change as time goes on).
 `,
   YogaNidraPageTitle: `Yoga Nidra - a short description`,
-
+  PrivateClassHeading: `Private flow classes`,
   PrivateClassIntroduction: `I am able to offer private classes in your own home or private space. In these sessions we can do vinyasa flow, yoga nidra, or perhaps a mixture of both ? These classes are tailored to your needs and wants and are available for anytime of day.`,
-  PrivateClassOutline: `Private classes are priced per hour at £40 per hour for vinyasa flow and £30 per hour for nidra sessions. Mixed sessions or longer sessions will be more but we will agree a price before we start. 
+  PrivateClassOutline: `Private classes are priced per hour at £20 per hour for vinyasa flow and £10 per hour for nidra sessions. Mixed sessions or longer sessions will be more but we will agree a price before we start. 
 `,
+  PrivateOnlineMeditation: `I can also offer private online meditation sessions, these can last anywhere from 15-30 minutes depending on your needs and cost £5. The advantage of private meditation is that I can modify the sessions to be perfect for you. Using your preferred methods of grounding, breathing, focusing and sculpting sessions to inform your intention so that the whole session becomes perfectly suited to your wellbeing`,
+  PrivateOnlineMeditationHeading: `Private online meditation`,
+
   PrivateClassesTitle: `Private classes in your home`,
   Welcome: `Welcome to Yoga on Avon, a place of peace, community and restoration for the soul`,
   ThankyouForContacting: `Thank you for getting in touch, I will aim to get back to you within 24 hours.`,
@@ -31,4 +36,17 @@ While I currently offer a small selection of classes as YOA grows I will be offe
   ThanksThree: `please check your spam folder if my reply has not appeared`,
   ReturnHome: `Return home`,
   EmailTooltip: `Email copied to clipboard`,
+};
+
+export const buttonStrings = {
+  BookNow: `Book Now`,
+  BookPrivateClass: `Lets flow`,
+  BookMeditation: `Relax and restore`,
+  BookBeginnersBundle: `Flow like a pro`,
+  MoreInformation: `More Info`,
+  SendMessage: `Send Message`,
+};
+
+export const inputLabels = {
+  classType: `Class Type`,
 };

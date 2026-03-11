@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import { useParams, useRouter } from "next/navigation";
 import { EmailContact } from "./emailContact";
+import { buttonStrings, inputLabels } from "@/utils";
 interface classBookingObject {
   name: string;
   emailHeader: string;
@@ -34,7 +35,28 @@ const privateClass: classBookingObject = {
     "Hi, I would like to book you for a private yoga class. on [DATE] at [TIME]. I consider myself an [BEINNGER, MODERATE, EXPERIENCED, HIGHLY EXPERIENCED] practitioner. I would like to [Please provide a brief description of what you would like to achieve from our sessions.",
 };
 
-const classes: classBookingObject[] = [yogaNidra, privateClass];
+const beginnersBundle: classBookingObject = {
+  name: "Beginners bundle",
+  emailHeader: "Beginners bundle inquiry",
+  selectValue: "Beginners",
+  emailTemplate:
+    "Hi, I would like to book the beginners bundle to start on [DATE].",
+};
+
+const onlineMeditation: classBookingObject = {
+  name: "Online meditation",
+  emailHeader: "Online meditation inquiry",
+  selectValue: "Online meditation",
+  emailTemplate:
+    "Hi, I would like to book an online meditation session for [DATE] at [TIME], my preferred platform is [PLATFORM]",
+};
+
+const classes: classBookingObject[] = [
+  yogaNidra,
+  privateClass,
+  beginnersBundle,
+  onlineMeditation,
+];
 
 const inputFieldValues = [
   {
@@ -64,6 +86,8 @@ export const BookingForm = () => {
   const classTypeMap: classTypeMap = {
     yogaNidra: yogaNidra,
     privateClass: privateClass,
+    beginnersBundle: beginnersBundle,
+    onlineMeditation: onlineMeditation,
   };
 
   const { handleInputValue, handleFormSubmit, formIsValid, errors } =
@@ -108,7 +132,9 @@ export const BookingForm = () => {
     >
       <Stack spacing={4}>
         <FormControl>
-          <InputLabel id="demo-simple-select-label">Class Type</InputLabel>
+          <InputLabel id="demo-simple-select-label">
+            {inputLabels.classType}
+          </InputLabel>
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
@@ -162,7 +188,7 @@ export const BookingForm = () => {
           color="secondary"
           disabled={!formIsValid()}
         >
-          Send Message
+          {buttonStrings.SendMessage}
         </Button>
         <EmailContact />
       </Stack>

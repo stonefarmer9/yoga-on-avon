@@ -11,7 +11,7 @@ import CurrencyPound from "@mui/icons-material/CurrencyPound";
 import Send from "@mui/icons-material/Send";
 import Link from "next/link";
 import { Info } from "@mui/icons-material";
-import { strings } from "@/utils";
+import { strings, buttonStrings } from "@/utils";
 
 export default function Home() {
   return (
@@ -35,11 +35,8 @@ export default function Home() {
         <>
           {lessons.map((lesson) => {
             return (
-              <>
-                <Grid
-                  size={{ md: 3, xs: 12 }}
-                  key={lesson.name}
-                >
+              <React.Fragment key={lesson.name}>
+                <Grid size={{ md: 3, xs: 12 }}>
                   <Stack spacing={2}>
                     <Box sx={{ position: "relative", display: "inline-block" }}>
                       <Spa
@@ -114,7 +111,7 @@ export default function Home() {
                       variant="outlined"
                       endIcon={<Send />}
                     >
-                      Book now
+                      {buttonStrings.BookNow}
                     </Button>
                     <Button
                       component={Link}
@@ -122,11 +119,11 @@ export default function Home() {
                       variant="outlined"
                       startIcon={<Info />}
                     >
-                      More info
+                      {buttonStrings.MoreInformation}
                     </Button>
                   </Stack>
                 </Grid>
-              </>
+              </React.Fragment>
             );
           })}
         </>
